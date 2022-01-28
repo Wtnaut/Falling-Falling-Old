@@ -1,0 +1,71 @@
+name: FallingFalling
+version: 1.0.0
+main: org.falling.Falling
+api-version: 1.17
+description: TBD LATER
+author: Wtnaut
+prefix: FF
+commands:
+   spawnfalling:
+       description: tests falling block spawns
+       usage: /spawnfalling
+       permission: falling.tester
+   togglefall:
+        description: toggles all falling
+        usage: /togglefall
+        permission: falling.admin
+   clearfallingstats:
+        description: clears all scoreboard stats
+        usage: /clearfallingstats
+        permission: falling.admin
+   seteventlocation:
+        description: sets the invasion location to your location.
+        usage: /seteventlocation
+        permission: falling.admin
+   spawnfallingevent:
+        description: spawns the specified event
+        usage: "/spawnfallingevent [cobblestorm/anvils/motherlode/totemspawn/generosity/invasion/feast/starfall] [0-5]"
+        permission: falling.tester
+   clearfallinguser:
+        description: clears all scoreboard stats of a specific user
+        usage: "/clearfallinguser [player]"
+        permission: falling.moderator
+   resetfallingstat:
+        description: clears the dragon killer statistic
+        usage: /resetfallingstat [blocks/kills/edrag]
+        permission: falling.admin
+   setfallingstats:
+        description: sets the scoreboard stats of a specific user
+        usage: "/clearfallinguser [blocks/kills/edrag][player][count(integer)]"
+        permission: falling.moderator
+   fallinginfo:
+        description: displays some user info
+        usage: /fallinginfo
+        permission: falling.user
+   fallingleaders:
+        desription: displays leaderboard
+        usage: /fallingleaders
+        permission: falling.admin
+permissions:
+    falling.all:
+        description: gives access to all fallingfalling commands, including ones used for testing.
+        default: op
+        children:
+            falling.admin: true
+            falling.tester: true
+            falling.moderator: true
+            falling.user: true
+    falling.admin:
+        description: gives access to commands which turn on and off aspects of the plugin
+        default: op
+        children:
+            falling.moderator: true
+    falling.tester:
+        description: gives access to testing commands.
+        default: op
+    falling.moderator:
+        description: gives access to moderation commands
+        default: op
+    falling.user:
+        description: default commands
+        default: true
